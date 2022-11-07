@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Library Application</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms">
+        <button class="add-book">Add Book To Library</button>
+        <div class="form-pop-up">
+          <form id="data-form">
+            <div class="form-container">
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title" />
+            </div>
+
+            <div class="form-container">
+              <label for="author">Author</label>
+              <input type="text" name="author" id="author" />
+            </div>
+
+            <div class="form-container">
+              <label for="pages">Pages</label>
+              <input type="number" name="pages" id="pages" />
+            </div>
+
+            <div class="form-container">
+              <label for="Read">Read</label>
+              <select name="Read" id="Read">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="buttons-container">
+              <button type="submit" id="submit-form">Submit Form</button>
+              <button type="button" id="close-form">Close Form</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="books"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

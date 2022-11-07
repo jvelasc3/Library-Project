@@ -28,3 +28,25 @@ function displayBookOnPage() {
     }
   });
 }
+
+function intakeFormData() {
+  let Title = document.getElementById("Title").value;
+  let Author = document.getElementById("Author").value;
+  let Pages = document.getElementById("Pages").value;
+  let Read = document.getElementById("Read").value;
+
+  if (Title == "" || Author == "" || Pages == "" || Read == "") {
+    return;
+  }
+
+  addBookToLibrary(Title, Author, Pages, Read);
+
+  document.getElementById("data-form").reset();
+}
+
+const submit_form_button = document.querySelector("#submit-form");
+
+submit_form_button.addEventListener("click", function (e) {
+  e.preventDefault();
+  intakeFormData();
+});

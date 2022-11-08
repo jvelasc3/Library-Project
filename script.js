@@ -8,7 +8,7 @@ function Book(Title, Author, Pages, Read) {
 }
 
 function addBookToLibrary(Title, Author, Pages, Read) {
-  let book = new Book(Title, Author, Pages, Read);
+  const book = new Book(Title, Author, Pages, Read);
   myLibrary.push(book);
   displayOnPage();
 }
@@ -24,7 +24,7 @@ function displayOnPage() {
   let index = 0;
 
   myLibrary.forEach((myLibrarys) => {
-    let card = document.createElement("div");
+    const card = document.createElement("div");
     card.classList.add("card");
     books.appendChild(card);
 
@@ -34,7 +34,7 @@ function displayOnPage() {
       card.appendChild(para);
     }
 
-    let read_button = document.createElement("button");
+    const read_button = document.createElement("button");
     read_button.classList.add("read_button");
     read_button.textContent = "Read ";
     read_button.dataset.linkedArray = index;
@@ -58,7 +58,7 @@ function displayOnPage() {
       displayOnPage();
     }
 
-    let delete_button = document.createElement("button");
+    const delete_button = document.createElement("button");
     delete_button.classList.add("delete_button");
     delete_button.textContent = "Remove";
     delete_button.dataset.linkedArray = index;
@@ -92,21 +92,21 @@ function intakeFormData() {
   document.getElementById("data-form").reset();
 }
 
-let submit_form = document.querySelector("#submit-form");
+const submit_form = document.querySelector("#submit-form");
 
 submit_form.addEventListener("click", function (event) {
   event.preventDefault();
   intakeFormData();
 });
 
-let add_book = document.querySelector(".add-book");
+const add_book = document.querySelector(".add-book");
 add_book.addEventListener("click", popUpForm);
 
 function popUpForm() {
   document.getElementById("data-form").style.display = "block";
 }
 
-let close_form_button = document.querySelector("#close-form");
+const close_form_button = document.querySelector("#close-form");
 close_form_button.addEventListener("click", closeForm);
 
 function closeForm() {

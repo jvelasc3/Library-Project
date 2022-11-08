@@ -97,6 +97,7 @@ const submit_form = document.querySelector("#submit-form");
 submit_form.addEventListener("click", function (event) {
   event.preventDefault();
   intakeFormData();
+  closeForm();
 });
 
 const add_book = document.querySelector(".add-book");

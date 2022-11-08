@@ -44,6 +44,20 @@ function intakeFormData() {
   document.getElementById("data-form").reset();
 }
 
+const add_book = document.querySelector(".add-book");
+add_book.addEventListener("click", popUpForm);
+
+function popUpForm() {
+  document.getElementById("data-form").style.display = "block";
+}
+
+const close_form_button = document.querySelector("#close-form");
+close_form_button.addEventListener("click", closeForm);
+
+function closeForm() {
+  document.getElementById("data-form").style.display = "none";
+}
+
 const submit_form_button = document.querySelector("#submit-form");
 
 submit_form_button.addEventListener("click", function (e) {

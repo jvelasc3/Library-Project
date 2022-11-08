@@ -1,3 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(245, 227, 205);
+}
+
+.books {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  margin: 20px;
+  gap: 10px;
+}
+
+.card {
+  border: 1px solid brown;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin-top: 20px;
+}
+
+select,
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 17px;
+}
+
+.buttons-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.buttons-container button {
+  width: 100%;
+  margin: 2px;
+}
+
+.add-book {
+  margin-top: 30px;
+  width: 250px;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 20px;
+  background-color: rgb(109, 83, 50);
+  color: burlywood;
+  font-weight: 600;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
 #data-form {
   display: none;
+}
+
+.read_button {
+  margin-right: 10px;
+}
+
+label {
+  font-size: 20px;
+  color: rgb(95, 73, 73);
+}
+
+input {
+  height: 25px;
+  border-color: firebrick;
+  padding: auto;
+}
+
+select {
+  height: 25px;
+  border-color: firebrick;
+}
+
+.buttons-container button {
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgb(168, 59, 59);
+  color: white;
+  font-weight: 800;
+}
+
+.card p {
+  font-size: 25px;
+  margin-bottom: 7px;
+  color: rgb(115, 79, 32);
+}
+
+.card button {
+  height: 25px;
+  border-radius: 10px;
+  background-color: rgb(168, 59, 59);
+  color: white;
+  font-weight: 800;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 5px;
 }

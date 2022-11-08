@@ -16,6 +16,12 @@ function addBookToLibrary(Title, Author, Pages, Read) {
 function displayBookOnPage() {
   const books = document.querySelector(".books");
 
+  const removeDivs = document.querySelectorAll(".card");
+  for (let i = 0; i < removeDivs.length; i++) {
+    removeDivs[i].remove();
+  }
+
+  let index = 0;
   myLibrary.forEach((myLibrarys) => {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -26,6 +32,22 @@ function displayBookOnPage() {
       para.textContent = `${key}: ${myLibrarys[key]}`;
       card.appendChild(para);
     }
+
+    let delete_button = document.createElement("button");
+    delete_button.classList.add("delete_button");
+    delete_button.textContent = "Remove";
+    delete_button.dataset.linkedArray = index;
+    card.appendChild(delete_button);
+
+    delete_button.addEventListener("click", removeFromLibrary);
+
+    function removeFromLibrary() {
+      let retrieveBookToRemove = delete_button.dataset.linkedArray;
+      myLibrary.splice(parseInt(retrieveBookToRemove), 1);
+      card.remove();
+      displayBookOnPage();
+    }
+    index++;
   });
 }
 

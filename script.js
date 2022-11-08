@@ -1,14 +1,14 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+function Book(Title, Author, Pages, Read) {
+  this.Title = Title;
+  this.Author = Author;
+  this.Pages = Pages;
+  this.Read = Read;
 }
 
-function addBookToLibrary(title, author, pages, read) {
-  let book = new Book(title, author, pages, read);
+function addBookToLibrary(Title, Author, Pages, Read) {
+  let book = new Book(Title, Author, Pages, Read);
   myLibrary.push(book);
   displayOnPage();
 }
@@ -22,6 +22,7 @@ function displayOnPage() {
   }
 
   let index = 0;
+
   myLibrary.forEach((myLibrarys) => {
     let card = document.createElement("div");
     card.classList.add("card");
@@ -46,12 +47,12 @@ function displayOnPage() {
       Book.prototype = Object.create(Book.prototype);
       const toggleBook = new Book();
 
-      if (myLibrary[parseInt(retrieveBookToToggle)].read == "yes") {
-        toggleBook.read = "no";
-        myLibrary[parseInt(retrieveBookToToggle)].read = toggleBook.read;
-      } else if (myLibrary[parseInt(retrieveBookToToggle)].read == "no") {
-        toggleBook.read = "yes";
-        myLibrary[parseInt(retrieveBookToToggle)].read = toggleBook.read;
+      if (myLibrary[parseInt(retrieveBookToToggle)].Read == "Yes") {
+        toggleBook.Read = "No";
+        myLibrary[parseInt(retrieveBookToToggle)].Read = toggleBook.Read;
+      } else if (myLibrary[parseInt(retrieveBookToToggle)].Read == "No") {
+        toggleBook.Read = "Yes";
+        myLibrary[parseInt(retrieveBookToToggle)].Read = toggleBook.Read;
       }
 
       displayOnPage();
@@ -77,16 +78,16 @@ function displayOnPage() {
 }
 
 function intakeFormData() {
-  let title = document.getElementById("title").value;
-  let author = document.getElementById("author").value;
-  let pages = document.getElementById("pages").value;
-  let read = document.getElementById("read").value;
+  let Title = document.getElementById("Title").value;
+  let Author = document.getElementById("Author").value;
+  let Pages = document.getElementById("Pages").value;
+  let Read = document.getElementById("Read").value;
 
-  if (title == "" || author == "" || pages == "" || read == "") {
+  if (Title == "" || Author == "" || Pages == "" || Read == "") {
     return;
   }
 
-  addBookToLibrary(title, author, pages, read);
+  addBookToLibrary(Title, Author, Pages, Read);
 
   document.getElementById("data-form").reset();
 }
